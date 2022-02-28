@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DeliveryMapper">
+	<resultMap type="Delivery" id="deliveryResultMap">
+		<id property="waybillNo" column="WAYBILL_NO"/>
+		<result property="userId" column="USER_ID"/>
+		<result property="productCategory" column="PRODUCT_CATEGORY"/>
+		<result property="deliveryFee" column="DELIVERY_FEE"/>
+		<result property="deliveryDate" column="DELIVERY_DATE"/>
+		<result property="deliveryNo" column="DELIVERY_NO"/>
+	</resultMap>
+	<select id="selectDelivery" parameterType="com.namuneulbo.findme.user.domain.User" resultMap="deliveryResultMap">
+		SELECT WAYBILL_NO, USER_ID, PRODUCT_CATEGORY, TO_CHAR(DELIVERY_DATE, 'YYYY-MM-DD')AS DELIVERY_DATE, DELIVERY_NO FROM DELIVERY_TBL
+		<if test = 'user_Id == "admin"'>
+		WHERE WAYBILL_NO IS NULL
+		</if>
+		<if test= 'user_Id != "admin"'>
+		WHERE USER_ID = #{user_Id}
+		</if>
+	</select>
+	
+	<update id="insertWaybillNo">
+		UPDATE DELIVERY_TBL SET WAYBILL_NO = #{waybillNo} WHERE DELIVERY_NO = #{deliveryNo}
+	</update>
+</mapper>

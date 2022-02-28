@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AuctionMapper">
+	<resultMap type="Auction" id="auctionResultMap">
+		<id property="auctionNo" column="AUCTION_NO"/>
+		<result property="auctionBeginDate" column="AUCTION_BEGIN_DATE"/>
+		<result property="auctionEndDate" column="AUCTION_END_DATE"/>
+		<result property="auctionRemainingTime" column="AUCTION_REMAINING_TIME"/>
+		<result property="auctionMaxprice" column="AUCTION_MAXPRICE"/>
+		<result property="auctionStartprice" column="AUCTION_STARTPRICE"/>
+		<result property="auctionPostStatus" column="AUCTION_POST_STATUS"/>
+		<result property="auctionImg" column="AUCTION_IMG"/>
+		<result property="auctionFavor" column="AUCTION_FAVOR"/>
+		<result property="auctionCategory" column="AUCTION_CATEGORY"/>
+		
+		<association javaType="Found" property="found" column="FOUND_POST_NO">
+			<id property="foundPostNo" column="FOUND_POST_NO"/>
+			<result property="userId" column="USER_ID"/>
+			<result property="userName" column="USER_NAME"/>
+			<result property="foundImg" column="FOUND_IMG"/>
+			<result property="foundCategory" column="FOUND_CATEGORY"/>
+			<result property="foundEnrollDate" column="FOUND_ENROLL_DATE"/>
+			<result property="foundProcessingStatus" column="FOUND_PROCESSING_STATUS"/>
+			<result property="foundStorageCenter" column="FOUND_STORAGE_CENTER"/>
+			<result property="foundPostStatus" column="FOUND_POST_STATUS"/>
+			<result property="foundDeliveryRequest" column="FOUND_DELIVERY_REQUEST"/>
+			<result property="nuPhone" column="NU_PHONE"/>
+		</association>    
+	</resultMap>
+	<select id="selectListCount" resultType="_int">
+		SELECT COUNT(*) FROM AUCTION_TBL WHERE AUCTION_POST_STATUS = 'Y'
+	</select>
+	<select id="selectListCountBySort" resultType="_int">
+		SELECT COUNT(*) FROM AUCTION_TBL WHERE AUCTION_CATEGORY LIKE '%'||#{auctionCategory }||'%'
+	</select>
+	<select id="selectTargetCount" resultType="_int">
+		SELECT COUNT(*) 
+		FROM FOUND_TBL 
+		WHERE (MONTHS_BETWEEN(SYSDATE, FOUND_TBL.FOUND_ENROLL_DATE) >= 6) AND FOUND_POST_STATUS = 'Y' 
+	</select>
+	<select id="selectAllList" resultMap="auctionResultMap">SELECT * FROM AUCTION_TBL ORDER BY AUCTION_BEGIN_DATE DESC </select>
+	<select id="selectAll" resultMap="auctionResultMap">
+		SELECT * FROM AUCTION_TBL 
+	<where>
+		<if test="auctionCategory != null and auctionCategory != ''">
+			AUCTION_CATEGORY LIKE '%'||#{auctionCategory }||'%'
+		</if>
+	</where>
+		<if test="auctionOrder =='desc'"> 
+			ORDER BY AUCTION_BEGIN_DATE DESC
+		</if>
+		<if test="auctionOrder == 'high'">
+			ORDER BY AUCTION_MAXPRICE DESC
+		</if>
+		<if test="auctionOrder == 'low'">
+			ORDER BY AUCTION_MAXPRICE ASC
+		</if>
+	</select>
+	<select id="selectTargetList" resultMap="auctionResultMap">
+		SELECT *
+		FROM FOUND_TBL 
+		WHERE (MONTHS_BETWEEN(SYSDATE, FOUND_TBL.FOUND_ENROLL_DATE) >= 6) AND FOUND_POST_STATUS = 'Y' 
+		ORDER BY FOUND_ENROLL_DATE DESC
+	</select>
+	<select id="selectAllById" resultMap="auctionResultMap">
+		SELECT * 
+		FROM AUCTION_TBL 
+		WHERE AUCTION_USER_ID = #{userId } AND (AUCTION_END_DATE &lt; TO_CHAR(SYSDATE, 'YYYY-MM-DD')) AND ((TO_CHAR(SYSDATE, 'YYYY-MM-DD')) = AUCTION_REMAINING_TIME)
+	</select>
+	<select id="selectOneByNo" resultMap="auctionResultMap">
+		SELECT * FROM AUCTION_TBL WHERE AUCTION_NO = #{auctionNo }
+	</select>
+	<insert id="insertAuction" parameterType="Auction">
+		INSERT INTO AUCTION_TBL VALUES(#{auctionNo}, SYSDATE, SYSDATE+9, SYSDATE+7, #{auctionStartprice }, #{auctionStartprice }, 'N', (SELECT FOUND_IMG FROM FOUND_TBL WHERE FOUND_POST_NO = #{auctionNo}), 0, (SELECT FOUND_CATEGORY FROM FOUND_TBL WHERE FOUND_POST_NO = #{auctionNo}), (SELECT USER_ID FROM FOUND_TBL WHERE FOUND_POST_NO = #{auctionNo}))
+	</insert>
+	<update id="updateLike" parameterType="_int">
+		UPDATE AUCTION_TBL SET AUCTION_FAVOR = #{auctionFavor }+1 WHERE AUCTION_NO = #{auctionNo }
+	</update>
+	<update id="updateBid" parameterType="Auction">
+		UPDATE AUCTION_TBL SET AUCTION_MAXPRICE = #{auctionMaxprice }, AUCTION_USER_ID = #{auctionUserId } WHERE AUCTION_NO = #{auctionNo }
+	</update>
+	<update id="blindPost" parameterType="_int">
+		UPDATE FOUND_TBL SET FOUND_POST_STATUS = 'N' WHERE FOUND_POST_NO = #{foundPostNo }
+	</update>	
+</mapper>

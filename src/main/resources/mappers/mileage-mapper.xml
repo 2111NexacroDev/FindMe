@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 예시-->
+<mapper namespace="MileageMapper">
+	<resultMap type="Mileage" id="mileageResultMap">
+		<id property="mileageNo" column="MILEAGE_NO"/>
+		<result property="userId" column="USER_ID"/>
+		<result property="mileage" column="MILEAGE"/>
+		<result property="mileageDate" column="MILEAGE_DATE"/>
+		<result property="mileageUseDate" column="MILEAGE_USE_DATE"/>
+		<result property="mileageType" column="MILEAGE_TYPE"/>
+	</resultMap>
+	
+	<select id="selectMileage" parameterType="User" resultMap="mileageResultMap">
+		SELECT MILEAGE_NO, USER_ID, MILEAGE, to_char(MILEAGE_DATE,'yyyy-mm-dd') as MILEAGE_DATE, to_char(MILEAGE_USE_DATE,'yyyy-mm-dd') as MILEAGE_USE_DATE, MILEAGE_TYPE FROM MILEAGE_TBL
+		<where>
+		<if test ='user_Id != null and user_Id != ""'>
+			AND USER_ID = #{user_Id}
+		</if>
+		</where>
+	</select>
+	
+	<insert id="insertMileage" parameterType="Mileage">
+		INSERT INTO MILEAGE_TBL VALUES(MILEAGE_NO.NEXTVAL, #{userId}, #{mileage}, NULL, #{mileageUseDate}, '사용')
+	</insert>
+</mapper>
+<!-- 예시-->

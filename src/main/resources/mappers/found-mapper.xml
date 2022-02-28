@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="FoundMapper">
+	<resultMap type="found" id="foundResultMap">
+		<id property="foundPostNo" column="FOUND_POST_NO"/>
+		<result property="userId" column="USER_ID"/>
+		<result property="userName" column="USER_NAME"/>
+		<result property="foundImg" column="FOUND_IMG"/>
+		<result property="foundStation" column="FOUND_STATION"/>
+		<result property="foundCategory" column="FOUND_CATEGORY"/>
+		<result property="foundHashtag" column="FOUND_HASHTAG"/>
+		<result property="foundDate" column="FOUND_DATE"/>
+		<result property="foundEnrollDate" column="FOUND_ENROLL_DATE"/>
+		<result property="foundProcessingStatus" column="FOUND_PROCESSING_STATUS"/>
+		<result property="foundStorageCenter" column="FOUND_STORAGE_CENTER"/>
+		<result property="foundPostPassword" column="FOUND_POST_PASSWORD"/>
+		<result property="foundPostStatus" column="FOUND_POST_STATUS"/>
+		<result property="foundDeliveryRequest" column="FOUND_DELIVERY_REQUEST"/>
+		<result property="nuPhone" column="NU_PHONE"/>
+	</resultMap>
+
+	<select id="selectListCount" resultType="_int">
+	     SELECT COUNT(*) FROM FOUND_TBL WHERE FOUND_POST_STATUS = 'Y'
+	</select>
+
+	<select id="selectListCountBySort" resultType="_int">
+		SELECT COUNT(*) FROM FOUND_TBL WHERE FOUND_HASHTAG LIKE '%'||#{foundHashtag }||'%' AND FOUND_STATION = #{foundStation } 
+	</select>
+	
+	<select id="selectListCountByHash" resultType="_int">
+		SELECT COUNT(*) FROM FOUND_TBL WHERE FOUND_HASHTAG LIKE '%'||#{foundHashtag }||'%'
+	</select>
+	
+	<select id="selectAllList" resultMap="foundResultMap">
+		SELECT * FROM FOUND_TBL WHERE FOUND_POST_STATUS = 'Y' ORDER BY FOUND_ENROLL_DATE DESC
+	</select>
+
+	<select id="selectAll" parameterType="com.namuneulbo.findme.found.domain.Found" resultMap="foundResultMap">
+		SELECT * FROM FOUND_TBL 
+	<where>
+		<if test="hash != null and hash != ''">
+			FOUND_HASHTAG LIKE '%'||#{hash }||'%' 
+		</if>
+		<if test="subwayLine != null and subwayLine !=''">
+			AND FOUND_STATION = #{subwayLine } 
+		</if>
+		<if test="foundProcessStatus != null and foundProcessStatus == '보관중'">
+			AND FOUND_PROCESSING_STATUS = '보관중' 
+		</if>
+		<if test="foundProcessStatus != null and foundProcessStatus == '처리완료'">
+			 AND FOUND_PROCESSING_STATUS = '처리완료' 
+		</if>
+	</where>
+		<if test="dateOrder =='DESC'"> 
+			ORDER BY FOUND_ENROLL_DATE ${dateOrder} 
+		</if>
+		<if test="dateOrder == 'ASC'">
+			ORDER BY FOUND_ENROLL_DATE ${dateOrder} 
+		</if>
+	</select>
+
+	<select id="selectOneByNo" resultMap="foundResultMap">
+		SELECT * FROM FOUND_TBL WHERE FOUND_POST_NO = #{foundPostNo }
+	</select>
+
+	<select id="selectFoundList" parameterType="User" resultMap="foundResultMap">
+		SELECT FOUND_POST_NO, FOUND_HASHTAG, FOUND_STATION, to_char(FOUND_DATE, 'yyyy-mm-dd')as FOUND_DATE, FOUND_STORAGE_CENTER, FOUND_PROCESSING_STATUS FROM FOUND_TBL
+		<where>
+		<if test='user_Id != null and user_Id != ""'>
+			AND USER_ID = #{user_Id}
+		</if>
+		</where>
+	</select>
+	
+	<insert id="insertFound" parameterType="Found">
+		 INSERT INTO FOUND_TBL VALUES(FOUND_POST_NO.NEXTVAL, #{userId }, #{userName }, #{foundImg }, #{foundStation }, #{foundCategory }, #{foundHashtag }, #{foundDate }, DEFAULT, DEFAULT, #{foundStorageCenter }, #{foundPostPassword }, DEFAULT, DEFAULT, #{nuPhone })
+	</insert>
+	
+	<insert id="insertMileage" parameterType="Mileage">
+		INSERT INTO MILEAGE_TBL VALUES(MILEAGE_NO.NEXTVAL, #{userId}, 500, SYSDATE, NULL, '적립')
+	</insert>
+
+	<update id="updateRequest">
+		UPDATE FOUND_TBL SET FOUND_DELIVERY_REQUEST = #{foundDeliveryRequest } WHERE FOUND_POST_NO = #{foundPostNo } AND USER_ID = #{userId }
+	</update>
+	<update id="updateFound">
+		UPDATE FOUND_TBL SET USER_NAME = #{userName }, FOUND_IMG = #{foundImg }, FOUND_CATEGORY = #{foundCategory }, FOUND_DATE = #{foundDate }, FOUND_STATION = #{foundStation }, NU_PHONE = #{nuPhone }, FOUND_HASHTAG = #{foundHashtag }, FOUND_POST_PASSWORD = #{foundPostPassword } WHERE USER_ID = #{userId } AND FOUND_POST_NO = #{foundPostNo }
+	</update>
+</mapper>

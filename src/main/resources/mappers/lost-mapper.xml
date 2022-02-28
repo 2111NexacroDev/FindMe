@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="LostMapper">
+	<resultMap type="lost" id="lostResultMap">
+		<id property="lostPostNo" column="LOST_POST_NO"/>
+		<result property="userId" column="USER_ID"/>
+		<result property="userName" column="USER_NAME"/>
+		<result property="lostImg" column="LOST_IMG"/>
+		<result property="lostSubway" column="LOST_SUBWAY"/>
+		<result property="lostDetail" column="LOST_DETAIL"/>
+		<result property="lostDate" column="LOST_DATE"/>
+		<result property="lostEnrollDate" column="LOST_ENROLL_DATE"/>
+		<result property="lostPostPassword" column="LOST_POST_PASSWORD"/>
+		<result property="lostPostStatus" column="LOST_POST_STATUS"/>
+		<result property="lostProcessingStatus" column="LOST_PROCESSING_STATUS"/>
+		<result property="lostCategory" column="LOST_CATEGORY"/>
+		<result property="nuPhone" column="NU_PHONE"/>
+	</resultMap>
+	
+	<insert id="insertLost" parameterType="Lost">
+		INSERT INTO LOST_TBL VALUES(LOST_POST_NO.NEXTVAL, #{userId }, #{userName }, #{lostImg }, #{lostSubway }, #{lostDetail }, #{lostDate }, DEFAULT, #{lostPostPassword }, DEFAULT, DEFAULT, #{lostCategory }, #{nuPhone } )
+	</insert>
+	
+	<select id="selectListCount" resultType="_int">
+		SELECT COUNT(*) FROM LOST_TBL WHERE LOST_POST_STATUS = 'Y'
+	</select>
+	
+	<select id="selectAllList" resultMap="lostResultMap">
+		SELECT * FROM LOST_TBL WHERE LOST_POST_STATUS = 'Y' ORDER BY LOST_ENROLL_DATE DESC
+	</select>
+	
+	<select id="selectLostList" parameterType="com.namuneulbo.findme.user.domain.User" resultMap="lostResultMap">
+		SELECT LOST_POST_NO, LOST_SUBWAY, to_char(LOST_DATE, 'yyyy-mm-dd')as LOST_DATE, LOST_PROCESSING_STATUS FROM LOST_TBL
+		<where>
+			<if test='user_Id != null and user_Id != ""'>
+				AND USER_ID = #{user_Id}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 분실물 노선별  -->
+	<select id="selectListCountBySort" resultType="_int">
+		SELECT COUNT(*) FROM LOST_TBL
+		WHERE LOST_SUBWAY = #{lostStation } 
+	</select>
+	
+	<!-- 분실물 정렬 -->
+	<select id="selectAll" resultMap="lostResultMap">
+		SELECT * FROM LOST_TBL 
+	<where>
+		<if test="subwayLine != null and subwayLine !=''">
+			AND LOST_SUBWAY = #{subwayLine } 
+		</if>
+		<if test="lostProcessStatus != null and lostProcessStatus == '접수'">
+			AND LOST_PROCESSING_STATUS = '접수' 
+		</if>
+		<if test="lostProcessStatus != null and lostProcessStatus == '보관중'">
+			 AND LOST_PROCESSING_STATUS = '보관중' 
+		</if>
+		<if test="lostProcessStatus != null and lostProcessStatus == '처리완료'">
+			 AND LOST_PROCESSING_STATUS = '처리완료' 
+		</if>
+	</where>
+		<if test="dateOrder =='DESC'"> 
+			ORDER BY LOST_ENROLL_DATE ${dateOrder} 
+		</if>
+		<if test="dateOrder == 'ASC'">
+			ORDER BY LOST_ENROLL_DATE ${dateOrder} 
+		</if>
+	</select>	
+
+	<select id="selectOneByNo" resultMap="lostResultMap">
+		SELECT * FROM LOST_TBL WHERE LOST_POST_NO = #{lostPostNo }
+	</select>	
+	
+	<update id="updateLost">
+		UPDATE FOUND_TBL SET USER_NAME = #{userName }, FOUND_IMG = #{foundImg }, FOUND_CATEGORY = #{foundCategory }, FOUND_DATE = #{foundDate }, FOUND_STATION = #{foundStation }, NU_PHONE = #{nuPhone }, FOUND_HASHTAG = #{foundHashtag }, FOUND_POST_PASSWORD = #{foundPostPassword } WHERE USER_ID = #{userId } AND FOUND_POST_NO = #{foundPostNo }
+	</update>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<!-- 만약에 NULL 데이터가 전달되었으면 빈칸이 아닌 NULL로 인식하도록 설정 -->
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.namuneulbo.findme.user.domain.User" alias="User"></typeAlias>
+		<typeAlias type="com.namuneulbo.findme.found.domain.Found" alias="Found"></typeAlias>
+		<typeAlias type="com.namuneulbo.findme.lost.domain.Lost" alias="Lost"></typeAlias>
+		<typeAlias type="com.namuneulbo.findme.mileage.domain.Mileage" alias="Mileage"></typeAlias>
+		<typeAlias type="com.namuneulbo.findme.delivery.domain.Delivery" alias="Delivery"></typeAlias>
+		<typeAlias type="com.namuneulbo.findme.auction.domain.Auction" alias="Auction"></typeAlias>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mappers/user-mapper.xml"/>
+		<mapper resource="mappers/found-mapper.xml"/>
+		<mapper resource="mappers/lost-mapper.xml"/>
+		<mapper resource="mappers/mileage-mapper.xml"/>
+		<mapper resource="mappers/delivery-mapper.xml"/>
+		<mapper resource="mappers/auction-mapper.xml"/>
+	</mappers>
+</configuration>

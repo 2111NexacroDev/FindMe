@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="UserMapper">
+	<resultMap type="com.namuneulbo.findme.user.domain.User" id="userResultMap">
+		<id property="user_Id" column="USER_ID" />
+		<result property="user_No" column="USER_NO" />
+		<result property="user_Pwd" column="USER_PWD" />
+		<result property="user_Name" column="USER_NAME" />
+		<result property="user_Phone" column="USER_PHONE" />
+		<result property="user_Address" column="USER_ADDRESS" />
+		<result property="user_Email" column="USER_EMAIL" />
+		<result property="milage" column="MILEAGE" />
+		<result property="discount" column="DISCOUNT" />
+	</resultMap>
+	
+	<select id="selectLoginUser" parameterType="com.namuneulbo.findme.user.domain.User" resultMap="userResultMap">
+		SELECT * FROM USER_TBL WHERE USER_ID= #{user_Id } AND USER_PWD= #{user_Pwd }
+	</select>
+	
+	<select id="selectfindId" parameterType="com.namuneulbo.findme.user.domain.User" resultMap="userResultMap">
+		SELECT * FROM USER_TBL WHERE USER_NAME =#{user_Name} AND USER_EMAIL = #{user_Email}
+	</select>
+	
+	<select id="selectfindPw" parameterType="com.namuneulbo.findme.user.domain.User" resultMap="userResultMap">
+		SELECT * FROM USER_TBL WHERE USER_ID= #{user_Id } AND USER_NAME =#{user_Name} AND USER_EMAIL = #{user_Email}
+	</select>
+	
+	<select id="selectPwCheck" parameterType="com.namuneulbo.findme.user.domain.User" resultMap="userResultMap">
+		SELECT * FROM USER_TBL WHERE USER_ID = #{user_Id }
+	</select>
+	
+	<select id="idCheck" parameterType="string" resultType="_int">
+		SELECT COUNT(*) FROM USER_TBL WHERE USER_ID = #{user_Id }
+	</select>
+	
+	<insert id="insertUser" parameterType="com.namuneulbo.findme.user.domain.User">
+	 	INSERT INTO USER_TBL VALUES(USER_NO.NEXTVAL, #{user_Id}, #{user_Pwd}, #{user_Name}, #{user_Phone}, #{user_Address}, #{user_Email}, NULL, NULL)
+	</insert>
+	
+	<update id="updateUser">
+		UPDATE USER_TBL SET USER_PWD = #{user_Pwd }, USER_EMAIL = #{user_Email }, USER_PHONE = #{user_Phone }, USER_ADDRESS = #{user_Address } WHERE USER_ID = #{user_Id }
+	</update>
+	
+	<delete id="deleteUser" parameterType="com.namuneulbo.findme.user.domain.User">
+		DELETE FROM USER_TBL WHERE USER_ID = #{user_Id }
+	</delete>
+	
+</mapper>
