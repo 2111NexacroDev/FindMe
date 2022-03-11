@@ -52,6 +52,7 @@ public class FoundController {
 		return "found/reportEdit";
 	}	
 	
+	//습득물 등록 기능
 	@RequestMapping(value="/found/register.do", method=RequestMethod.POST)
 	public String foundRegister(
 			Model model
@@ -103,7 +104,8 @@ public class FoundController {
 		// 파일명 리턴
 		return renameFileName;
 	}
-
+	
+	//습득물리스트 보여주는 기본기능
 	@RequestMapping(value="/found/list.do" , method=RequestMethod.GET)
 	public String foundListView(
 			Model model
@@ -137,6 +139,7 @@ public class FoundController {
 		}
 	}
 	
+	//동적쿼리가 반영된 게시물리스트
 	@RequestMapping(value="/found/dynamic.do", method=RequestMethod.POST)
 	public String dynamicList(
 			Model model
@@ -204,6 +207,7 @@ public class FoundController {
 		}
 	}
 	
+	//db에 있는 FOUND_REQUEST_DELIVERY 컬럼의 레코드값을 변경하는 기능
 	@ResponseBody
 	@RequestMapping(value="/found/requestDelivery.do", method=RequestMethod.GET)
 	public String deliveryRequest(
@@ -222,6 +226,7 @@ public class FoundController {
 		}
 	}
 	
+	//기존에 입력했던 게시물을 수정하면 수정한 게시물이 반영되어 리스트로 출력되는 기능
 	@RequestMapping(value="/found/update.do", method=RequestMethod.POST)
 	public String UpdateRequest(
 			Model model
