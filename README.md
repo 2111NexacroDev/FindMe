@@ -107,8 +107,16 @@
 
 ![로그인폼](https://user-images.githubusercontent.com/97659389/157798509-bfb69302-b531-44c9-8718-24eeda8829dc.png)
 + 회원가입
+
+![회원가입 폼](https://user-images.githubuserco
+
 + 정보수정
+
+![정보수정](https://user-images.githubusercontent.com/97659389/157798767-0e8a4e1e-d7c0-41ab-b123-daedc7cd471b.png)
+
 + 탈퇴
+
+![회원탈퇴](https://user-images.githubusercontent.com/97659389/157798774-4a449193-c1a3-4912-b4e0-18bab34ff381.png)
 
 **습득물 경매**
 + 습득물 경매 입찰
