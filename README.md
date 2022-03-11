@@ -108,11 +108,16 @@
 ![로그인폼](https://user-images.githubusercontent.com/97659389/157798509-bfb69302-b531-44c9-8718-24eeda8829dc.png)
 + 회원가입
 
-![회원가입 폼](https://user-images.githubusercocontent.com/97659389/157798763-ae1856ac-4320-4967-aa13-a423aa0bf67c.png)
+![회원가입 폼](https://user-images.githubusercontent.com/97659389/157799343-07f66379-81e6-48ea-a8e7-0e26a99a99f3.png)
 
 + 정보수정
 
-![정보수정](https://user-images.githubusercontent.com/97659389/157798767-0e8a4e1e-d7c0-41ab-b123-daedc7cd471b.png)
+![정보수정](https://user-images.githubusercontent.com/97659389/157799315-710b3e24-6636-4784-9bcf-3eb4ab885e11.png)
+
++아이디, 비밀번호 찾기
+
+![아이디찾기](https://user-images.githubusercontent.com/97659389/157798755-e8a6f5d1-e643-447f-9e2b-77b2c4f0613e.png)
+![비밀번호찾기](https://user-images.githubuserntent.com/97659389/157798769-96560aae-674c-49c4-bd71-c7832579e8f2.png)
 
 + 탈퇴
 
