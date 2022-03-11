@@ -108,7 +108,7 @@
 ![로그인폼](https://user-images.githubusercontent.com/97659389/157798509-bfb69302-b531-44c9-8718-24eeda8829dc.png)
 + 회원가입
 
-![회원가입 폼](https://user-images.githubuserco
+![회원가입 폼](https://user-images.githubusercocontent.com/97659389/157798763-ae1856ac-4320-4967-aa13-a423aa0bf67c.png)
 
 + 정보수정
 
