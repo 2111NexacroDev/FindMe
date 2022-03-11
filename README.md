@@ -1,7 +1,7 @@
 # FindMe
 - 지하철 온라인 분실물 센터
 - 프로젝트 참여자 / 권진실(팀장), 김선교(부팀장), 김아름, 이수연, 장민수, 전장영 
-<br>
+
 
 ## 목차
 1. [프로젝트 개요](#프로젝트-개요)
@@ -25,7 +25,7 @@
 <br>
 
 ## 사용기술 및 개발환경
-|   |   |
+|area|tools|
 |---|---|
 |Server|Apache Tomcat|
 |Coding Tool|Eclipse, VS CODE|
@@ -94,7 +94,9 @@
 <br>
 
 ## 주요기능
+
 **분실물**
+
 + 분실물 신고
 ![findme_lost_report](https://user-images.githubusercontent.com/97657886/157793255-9c263cfc-7293-4668-80d7-628ac68117f6.png)
 
@@ -102,6 +104,7 @@
 ![findme_lost_list](https://user-images.githubusercontent.com/97657886/157793261-aa2b0cf9-c0a0-4bf6-9150-5627798e274a.png)
 
 **습득물**
+
 + 습득물 등록
 ![findme_found_report](https://user-images.githubusercontent.com/97657886/157815016-bacfaaa8-6bb8-42ea-a89e-119d90eb6c3b.png)
 
@@ -109,9 +112,11 @@
 ![findme_post_modify](https://user-images.githubusercontent.com/97657886/157815207-a348f507-2305-47de-8d3b-d1004493deda.png)
 
 **회원관리**
+
 + 로그인
 
 ![로그인폼](https://user-images.githubusercontent.com/97659389/157798509-bfb69302-b531-44c9-8718-24eeda8829dc.png)
+
 + 회원가입
 
 ![회원가입 폼](https://user-images.githubusercontent.com/97659389/157799343-07f66379-81e6-48ea-a8e7-0e26a99a99f3.png)
@@ -130,8 +135,12 @@
 ![회원탈퇴](https://user-images.githubusercontent.com/97659389/157798774-4a449193-c1a3-4912-b4e0-18bab34ff381.png)
 
 **습득물 경매**
-+ 습득물 경매 입찰<img width="960" alt="옥션 리스트" src="https://user-images.githubusercontent.com/97710895/157823482-2e3a1a04-0d35-4820-9150-d1a246d21e61.png">
-+ 습득물 낙찰<img width="945" alt="경매 참여 페이지" src="https://user-images.githubusercontent.com/97710895/157825156-0b3d33fb-8c3f-41b4-84af-e7f7be34a06f.png">
+
++ 습득물 경매 입찰
+<img width="960" alt="옥션 리스트" src="https://user-images.githubusercontent.com/97710895/157823482-2e3a1a04-0d35-4820-9150-d1a246d21e61.png">
+
++ 습득물 낙찰
+<img width="945" alt="경매 참여 페이지" src="https://user-images.githubusercontent.com/97710895/157825156-0b3d33fb-8c3f-41b4-84af-e7f7be34a06f.png">
 
 
 **마일리지**
@@ -141,7 +150,7 @@
 **택배**
 + 택배 신청
 + 택배 조회
-<br>
+
 
 ## Document
 + USECASE
