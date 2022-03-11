@@ -98,6 +98,7 @@
 + 분실물 신고
 + ![findme_lost_report](https://user-images.githubusercontent.com/97657886/157793255-9c263cfc-7293-4668-80d7-628ac68117f6.png)
 + 분실물 검색
++ ![findme_lost_list](https://user-images.githubusercontent.com/97657886/157793261-aa2b0cf9-c0a0-4bf6-9150-5627798e274a.png)
 
 **습득물**
 + 습득물 등록
