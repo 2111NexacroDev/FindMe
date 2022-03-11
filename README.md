@@ -102,7 +102,7 @@
 
 **습득물**
 + 습득물 등록
-+ ![findme_found_report](https://user-images.githubusercontent.com/97657886/157815016-bacfaaa8-6bb8-42ea-a89e-119d90eb6c3b.png)
+![findme_found_report](https://user-images.githubusercontent.com/97657886/157815016-bacfaaa8-6bb8-42ea-a89e-119d90eb6c3b.png)
 
 
 + 습득물 수정
