@@ -27,6 +27,7 @@ import com.namuneulbo.findme.lost.domain.Lost;
 import com.namuneulbo.findme.lost.service.LostService;
 import com.namuneulbo.findme.user.domain.User;
 
+// 분실물 컨트롤러
 @Controller
 public class LostController {
 
