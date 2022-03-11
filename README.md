@@ -12,11 +12,12 @@
 - UI와 기능 모두 직관적인 사이트를 제작하여 사용자 경험을 극대화하고자 함. 
 
 ## 사용기술 및 개발환경
-|:Server:|:Apache Tomcat:|
-|"Coding Tool:|:Eclipse, VS CODE:|
-|:언어:|:HTML, CSS, JavaScript, jQuery, JAVA:|
-|:Coding Tool:|:Eclipse, VS CODE:|
-|:Database:|:Oracle:|
+|:---:|:---:|:---:|
+|Server|Apache Tomcat|
+|Coding Tool|Eclipse, VS CODE|
+|언어|HTML, CSS, JavaScript, jQuery, JAVA|
+|Coding Tool|Eclipse, VS CODE|
+|Database|Oracle|
 
 
 
