@@ -137,4 +137,5 @@
 <br>
 
 ## Document
-작성중
++ USECASE
+![FINDME_USECASE](https://user-images.githubusercontent.com/40844404/157806821-fe913830-afed-446e-aa7d-f86c72f6555d.jpg)
