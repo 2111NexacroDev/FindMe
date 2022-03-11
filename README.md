@@ -96,6 +96,7 @@
 ## 주요기능
 **분실물**
 + 분실물 신고
++ ![findme_lost_report](https://user-images.githubusercontent.com/97657886/157793255-9c263cfc-7293-4668-80d7-628ac68117f6.png)
 + 분실물 검색
 
 **습득물**
