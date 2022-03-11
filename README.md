@@ -16,12 +16,14 @@
 
 
 ## 사용기술 및 개발환경
-|:---:|:---:|
+
+|   |   |
+|---|---|
 |Server|Apache Tomcat|
 |Coding Tool|Eclipse, VS CODE|
 |언어|HTML, CSS, JavaScript, jQuery, JAVA|
-|Coding Tool|Eclipse, VS CODE|
 |Database|Oracle|
+
 
 ![tools](https://user-images.githubusercontent.com/40844404/157788090-eb8c89c0-e109-4951-8ede-cb5afc0877ef.jpg)
 
