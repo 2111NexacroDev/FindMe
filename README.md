@@ -131,6 +131,7 @@
 
 **습득물 경매**
 + 습득물 경매 입찰
++ (img width="960" alt="Auction" src="https://user-images.githubusercontent.com/97710895/157822925-8e3a0889-98b3-485d-85ec-0ab0665a3bfd.png")
 + 습득물 낙찰
 
 **마일리지**
