@@ -16,6 +16,7 @@ import com.namuneulbo.findme.mileage.domain.Mileage;
 import com.namuneulbo.findme.mileage.service.MileageService;
 import com.namuneulbo.findme.user.domain.User;
 
+// 마일리지 컨트롤러
 @Controller
 public class MileageController {
 	@Autowired
