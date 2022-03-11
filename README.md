@@ -96,9 +96,9 @@
 ## 주요기능
 **분실물**
 + 분실물 신고
-+ ![findme_lost_report](https://user-images.githubusercontent.com/97657886/157793255-9c263cfc-7293-4668-80d7-628ac68117f6.png)
+![findme_lost_report](https://user-images.githubusercontent.com/97657886/157793255-9c263cfc-7293-4668-80d7-628ac68117f6.png)
 + 분실물 검색
-+ ![findme_lost_list](https://user-images.githubusercontent.com/97657886/157793261-aa2b0cf9-c0a0-4bf6-9150-5627798e274a.png)
+![findme_lost_list](https://user-images.githubusercontent.com/97657886/157793261-aa2b0cf9-c0a0-4bf6-9150-5627798e274a.png)
 
 **습득물**
 + 습득물 등록
@@ -106,7 +106,7 @@
 
 
 + 습득물 수정
-+ ![findme_post_modify](https://user-images.githubusercontent.com/97657886/157815207-a348f507-2305-47de-8d3b-d1004493deda.png)
+![findme_post_modify](https://user-images.githubusercontent.com/97657886/157815207-a348f507-2305-47de-8d3b-d1004493deda.png)
 
 **회원관리**
 + 로그인
