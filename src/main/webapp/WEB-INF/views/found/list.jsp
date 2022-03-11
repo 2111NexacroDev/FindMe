@@ -107,14 +107,20 @@
 					<!-- 반복 출력 -->
 				</ul>
 				<ul class="ul--paging text-center">
+				<c:if test="${pi.startNavi ne 1 }">
+					<a href="/found/list.do?page=${pi.startNavi -1 }">&lt;</a>
+				</c:if>
 					<c:forEach var="p" begin="${pi.startNavi }" end="${pi.endNavi }">
-						<li>
+						<li <c:if test="${pi.currentPage eq p }">class="on"</c:if>>
 							<c:url var="pagination" value="/found/list.do">
 								<c:param name="page" value="${p }"></c:param>
 							</c:url>
 							<a href="${pagination }">${p }</a>
 						</li>
 					</c:forEach>
+				<c:if test="${pi.endNavi < pi.maxPage && pi.currentPage ne maxPage }">
+					<a href="/found/list.do?page=${pi.endNavi + 1 }">&gt;</a>
+				</c:if>
 				</ul>
 			</div>
 		</section>
