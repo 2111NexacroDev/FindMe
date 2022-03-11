@@ -117,7 +117,7 @@
 +아이디, 비밀번호 찾기
 
 ![아이디찾기](https://user-images.githubusercontent.com/97659389/157798755-e8a6f5d1-e643-447f-9e2b-77b2c4f0613e.png)
-![비밀번호찾기](https://user-images.githubuserntent.com/97659389/157798769-96560aae-674c-49c4-bd71-c7832579e8f2.png)
+![비밀번호찾기](https://user-images.githubusercontent.com/97659389/157799493-35eae5ff-314b-4f8f-94f8-f13f23fce244.png)
 
 + 탈퇴
 
