@@ -34,7 +34,7 @@
 
 
 ![tools](https://user-images.githubusercontent.com/40844404/157788090-eb8c89c0-e109-4951-8ede-cb5afc0877ef.jpg)
-<br>
+<br><br>
 
 ## 프로젝트 기능 구현
 
@@ -42,7 +42,6 @@
 + 공통레이아웃
   - 프론트 페이지 구성
   - 습득물/분실물/경매 상세 AJAX조회
-  - 현재페이지 하이라이팅
 + 경매 페이지
   - 좋아요 기능
   - 경매물품페이지(등록/삭제)
@@ -92,18 +91,19 @@
 + found(습득물) 
   - 해시태그 추출, 워드클라우드 생성
 
+<br>
 
 ## 주요기능
 **분실물**
 + 분실물 신고
 ![findme_lost_report](https://user-images.githubusercontent.com/97657886/157793255-9c263cfc-7293-4668-80d7-628ac68117f6.png)
+
 + 분실물 검색
 ![findme_lost_list](https://user-images.githubusercontent.com/97657886/157793261-aa2b0cf9-c0a0-4bf6-9150-5627798e274a.png)
 
 **습득물**
 + 습득물 등록
 ![findme_found_report](https://user-images.githubusercontent.com/97657886/157815016-bacfaaa8-6bb8-42ea-a89e-119d90eb6c3b.png)
-
 
 + 습득물 수정
 ![findme_post_modify](https://user-images.githubusercontent.com/97657886/157815207-a348f507-2305-47de-8d3b-d1004493deda.png)
