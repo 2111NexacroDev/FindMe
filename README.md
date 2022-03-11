@@ -100,7 +100,11 @@
 
 **습득물**
 + 습득물 등록
-+ 급득물 수정
++ ![findme_found_report](https://user-images.githubusercontent.com/97657886/157815016-bacfaaa8-6bb8-42ea-a89e-119d90eb6c3b.png)
+
+
++ 습득물 수정
++ ![findme_post_modify](https://user-images.githubusercontent.com/97657886/157815207-a348f507-2305-47de-8d3b-d1004493deda.png)
 
 **회원관리**
 + 로그인
