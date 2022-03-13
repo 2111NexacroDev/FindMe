@@ -172,4 +172,6 @@
 
 ![flowchart](https://user-images.githubusercontent.com/40844404/158043354-0e33ea5c-c8d3-4c56-b36f-aa92df5f6c43.jpg)
 
++ ERD
 
+![erd](https://user-images.githubusercontent.com/40844404/158043993-bdac4e13-d937-4015-b665-34b75300bb90.jpg)
