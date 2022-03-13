@@ -82,7 +82,7 @@ public class AuctionStoreLogic implements AuctionStore{
 	}
 
 	@Override
-	public int updateLike(SqlSession sqlSession, int foundPostNo) {
+	public int hidePost(SqlSession sqlSession, int foundPostNo) {
 		int result = sqlSession.update("AuctionMapper.blindPost", foundPostNo);
 		return result;
 	}

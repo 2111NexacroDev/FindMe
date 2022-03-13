@@ -20,5 +20,5 @@ public interface AuctionStore {
 	public int insertAuction(SqlSession sqlSession, Auction auction);
 	public int updateLike(SqlSession sqlSession, Auction auction);
 	public int updateBid(SqlSession sqlSession, Auction auction);
-	public int updateLike(SqlSession sqlSession, int foundPostNo);
+	public int hidePost(SqlSession sqlSession, int foundPostNo);
 }

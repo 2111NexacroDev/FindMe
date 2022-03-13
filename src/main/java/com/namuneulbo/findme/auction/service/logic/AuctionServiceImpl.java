@@ -87,7 +87,7 @@ public class AuctionServiceImpl implements AuctionService {
 
 	@Override
 	public int hidePost(int foundPostNo) {
-		int result = aStore.updateLike(sqlSession, foundPostNo);
+		int result = aStore.hidePost(sqlSession, foundPostNo);
 		return result;
 	}
 }
