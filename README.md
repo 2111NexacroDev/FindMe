@@ -155,12 +155,18 @@
 
 **마일리지**
 + 마일리지 적립
+
+![마일리지 적립내역](https://user-images.githubusercontent.com/97657567/158046648-cb02fa6f-ffb5-42de-a379-17f393a4ae31.png)
+
 + 마일리지 사용
+
+![마일리지 사용내역](https://user-images.githubusercontent.com/97657567/158046610-18ca8149-4d70-4174-9fc9-e5dc4feb8b48.png)
 
 **택배**
 + 택배 신청
 + 택배 조회
 
+![택배서비스 신청내역](https://user-images.githubusercontent.com/97657567/158046687-439f567b-e715-4658-982d-983fda202d04.png)
 
 ## Document
 
