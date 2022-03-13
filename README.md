@@ -25,7 +25,7 @@
 <br>
 
 ## 사용기술 및 개발환경
-|area|tools|
+|Area|Tools|
 |---|---|
 |Server|Apache Tomcat|
 |Coding Tool|Eclipse, VS CODE|
@@ -95,20 +95,28 @@
 
 ## 주요기능
 
+**메인페이지**
+
+![main](https://user-images.githubusercontent.com/40844404/158043034-c0cd3286-d3b2-49b5-a6ce-d312a64ef189.jpg)
+
 **분실물**
 
 + 분실물 신고
+
 ![findme_lost_report](https://user-images.githubusercontent.com/97657886/157793255-9c263cfc-7293-4668-80d7-628ac68117f6.png)
 
 + 분실물 검색
+
 ![findme_lost_list](https://user-images.githubusercontent.com/97657886/157793261-aa2b0cf9-c0a0-4bf6-9150-5627798e274a.png)
 
 **습득물**
 
 + 습득물 등록
+
 ![findme_found_report](https://user-images.githubusercontent.com/97657886/157815016-bacfaaa8-6bb8-42ea-a89e-119d90eb6c3b.png)
 
 + 습득물 수정
+
 ![findme_post_modify](https://user-images.githubusercontent.com/97657886/157815207-a348f507-2305-47de-8d3b-d1004493deda.png)
 
 **회원관리**
@@ -125,7 +133,7 @@
 
 ![정보수정](https://user-images.githubusercontent.com/97659389/157799315-710b3e24-6636-4784-9bcf-3eb4ab885e11.png)
 
-+아이디, 비밀번호 찾기
++ 아이디, 비밀번호 찾기
 
 ![아이디찾기](https://user-images.githubusercontent.com/97659389/157798755-e8a6f5d1-e643-447f-9e2b-77b2c4f0613e.png)
 ![비밀번호찾기](https://user-images.githubusercontent.com/97659389/157799493-35eae5ff-314b-4f8f-94f8-f13f23fce244.png)
@@ -137,11 +145,13 @@
 **습득물 경매**
 
 + 습득물 경매 입찰
-<img width="960" alt="옥션 리스트" src="https://user-images.githubusercontent.com/97710895/157823482-2e3a1a04-0d35-4820-9150-d1a246d21e61.png">
+<img width="100%" alt="옥션 리스트" src="https://user-images.githubusercontent.com/97710895/157823482-2e3a1a04-0d35-4820-9150-d1a246d21e61.png">
 
 + 습득물 낙찰
-<img width="945" alt="경매 참여 페이지" src="https://user-images.githubusercontent.com/97710895/157825156-0b3d33fb-8c3f-41b4-84af-e7f7be34a06f.png">
+<img width="100%" alt="경매 참여 페이지" src="https://user-images.githubusercontent.com/97710895/157825156-0b3d33fb-8c3f-41b4-84af-e7f7be34a06f.png">
 
++ 경매물품 등록
+<img width="100%" alt="경매물품 등록 페이지" src="https://user-images.githubusercontent.com/40844404/158043219-502eb288-c02c-4277-ac9b-a445ec1d995a.PNG">
 
 **마일리지**
 + 마일리지 적립
@@ -153,5 +163,13 @@
 
 
 ## Document
+
 + USECASE
+
 ![FINDME_USECASE](https://user-images.githubusercontent.com/40844404/157806821-fe913830-afed-446e-aa7d-f86c72f6555d.jpg)
+
++ FLOW CHART
+
+![flowchart](https://user-images.githubusercontent.com/40844404/158043354-0e33ea5c-c8d3-4c56-b36f-aa92df5f6c43.jpg)
+
+
